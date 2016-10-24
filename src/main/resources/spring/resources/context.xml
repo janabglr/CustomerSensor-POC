@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!--  <context:property-placeholder location="file:${openapi.config}/common/openapi.env.properties,
+                                            file:${openapi.config}/common/endeca.config.properties,
+                                            classpath:spring/price-data-access/main.config.properties,
+                                            classpath:spring/product-data-access/main.config.properties,
+                                            classpath:spring/catalog-data-access/main.config.properties,
+                                            classpath:spring/inventory-grid-data-access-services/main.config.properties"/>
+-->
+    <import resource="classpath:spring/resources/customer-sensor-poc.xml"/>
+
+    <!--<cache:annotation-driven proxy-target-class="true"/>-->
+  <!-- Register the Customer.properties -->
+
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+    <property name="prefix"><value>/WEB-INF/views/</value></property>
+    <property name="suffix"><value>.jsp</value></property>
+  </bean>
+
+</beans>
+

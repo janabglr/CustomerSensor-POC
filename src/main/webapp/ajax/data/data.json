@@ -1,0 +1,12 @@
+{
+  "alertResponse": [
+    {
+          "userName":"abc@gmail.com",
+          "tagId":"1"
+        },
+    {
+      "userName":"abc@gmail.com",
+      "tagId":"2"
+    }
+  ]
+}

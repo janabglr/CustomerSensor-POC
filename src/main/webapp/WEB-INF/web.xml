@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>Customer Sensor POC</display-name>
+
+   <!-- <servlet>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/resources/context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <url-pattern>/setTagOrders</url-pattern>
+    </servlet-mapping>-->
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/resources/context.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>rest</servlet-name>
+        <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.practice.services; org.codehaus.jackson.jaxrs</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>rest</servlet-name>
+        <url-pattern>/v1/*</url-pattern>
+    </servlet-mapping>
+
+
+
+
+</web-app>

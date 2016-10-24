@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#data-table').DataTable({
+                "ajax": "data.json",
+                "columns" : [
+                    {
+                        "data" : "userName",
+                        "data" : "tagId",
+                    }
+                ]
+            });
+            
+        })
+    </script>
+</head>
+<body>
+
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>TagID</th>
+        </tr>
+    </thead>
+</table>
+</body>
+</html>
